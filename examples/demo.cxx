@@ -45,7 +45,7 @@ int main()
 		// Only call the function if symbol lookup was successful.
 		if (bin_op_sym)
 		{
-			std::function<int(int,int)> bin_op = bin_op_sym.get();
+			std::function<int(int,int)> bin_op = dlibxx::value_from_optional(bin_op_sym);
 
 			std::cout << bin_op(1, 2) << std::endl;
 
